@@ -1,14 +1,27 @@
 {
     //constrains - enforce
     // If want some property must be passed then we use constrains like studnet must enter ID, Name and email 
-    const addCourseToStudent = <T extends {id: number; name:string; email: string;} >(student: T) =>{
+
+    // const addCourseToStudent = <T extends {id: number; name:string; email: string;} >(student: T) =>{
+    //     const course = "Next Level Web Development"
+    //     return {
+    //         ...student,
+    //         course
+    //     }
+    // }
+    interface Student {
+        id: number;
+        name: string;
+        email: string;
+    }
+    const addCourseToStudent = <T extends Student>(student: T) =>{
         const course = "Next Level Web Development"
         return {
             ...student,
             course
         }
     }
-    const student1 = addCourseToStudent({
+    const student1 = addCourseToStudent<Student & {devType:string}>({
         id: 12,
         name: 'Mr X', 
         email: 'x@mail.com', 

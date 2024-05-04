@@ -36,3 +36,4 @@
     // const student3 = addCourseToStudent({emni : 'emni'}) // it should not be like this 
     const student3 = addCourseToStudent({id: 44, name:'Risa', email:'ris@mail.com', emni : 'emni'}) // it should not be like this 
 }
+
